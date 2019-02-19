@@ -1,28 +1,13 @@
-# empty-project-react
+# Clone of Newegg Add To Cart and Best Sellers
 
-Empty project.
+Technologies:
 
-## Building and running on localhost
+```
+Node, SQLite3, React, Express, Axios
 
-First install dependencies:
-
-```sh
-npm install
 ```
 
-To create a production build:
+The following repo is an implementation of the above technologies to reacreate the functionality of Newegg's Add To Cart and Best Sellers. 
 
-```sh
-npm run build-prod
-```
-
-To create a development build:
-
-```sh
-npm run build-dev
-```
-
-## Running
-
-Open the file `dist/index.html` in your browser
+Data was generated for 100 items using my own functions as well as ```Faker.js``` to generate random company names and then stored in the SQLite3 database.
 
