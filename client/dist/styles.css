@@ -1,0 +1,805 @@
+body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  line-height: 1.36;
+}
+
+div {
+  display: block;
+}
+
+.aside {
+  font-size: 14px;
+  width: 300px;
+  float: right;
+  position: relative;
+  left: 0px;
+  color: #4d4d4d;
+  display: block;
+  /* ^ display subject to change*/
+}
+
+.cart {
+  margin: 0 0 20px;
+  background: #f2f3f6;
+  padding: 4px;
+  border: 1px solid #cacaca;
+  display: block;
+}
+
+.newegg-seller-info-lpPrimary {
+  position: relative;
+  margin-bottom: 4px;
+  float: none;
+  width: auto;
+  background: #fff;
+  padding: 0;
+  border: 2px solid #fff;
+  display: block;
+}
+
+.mktProdOpts {
+  background: #fff;
+  overflow: visible;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 0;
+  border: 0;
+  font-size: 12px;
+  display: block;
+}
+
+.featured-seller {
+  display: block;
+  position: relative;
+  padding: 10px;
+}
+
+.price-info {
+  padding-left: 8px;
+  text-align: left;
+  padding-right: 6px;
+  min-height: 60px;
+  margin-top: 15px;
+  overflow: hidden;
+  list-style: none;
+  margin: 0 0 5px 0;
+  padding: 0;
+  color: #222;
+  font-weight: 400;
+  font-size: 11px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 4%;
+}
+
+.price-was {
+  margin-bottom: 0;
+  display: block;
+  color: #222;
+  text-decoration: line-through;
+  min-height: 13px;
+  text-align: -webkit-match-parent;
+  list-style: none;
+}
+
+.price-current {
+  font-size: 28px;
+  margin: 4px;
+  height: auto!important;
+  display: list-item;
+  text-align: -webkit-match-parent;
+  list-style: none;
+}
+
+.price-save {
+  font-size: 13px;
+  min-height: 0;
+  height: auto;
+  margin-bottom: 0;
+  color: #c1240b;
+  display: list-item;
+  text-align: -webkit-match-parent;
+  list-style: none;
+}
+
+.price-save-label {
+  padding: 0 0 0 6px;
+  position: relative;
+  background: #cc4e00;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  text-align: -webkit-match-parent;
+}
+
+.price-save-dollar {
+  padding: 0 0 0 2px;
+  position: relative;
+  background: #cc4e00;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  text-align: -webkit-match-parent;
+}
+
+.price-save-percent {
+  padding: 0 6px 0 2px;
+  position: relative;
+  background: #cc4e00;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  text-align: -webkit-match-parent;
+  list-style: none;
+}
+
+.price-ship {
+  padding-top: 0;
+  font-size: 13px;
+  min-height: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+  color: #222;
+  text-align: -webkit-match-parent;
+}
+
+.note {
+  white-space: normal;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.note a {
+  text-decoration: none;
+}
+
+.nav-row {
+  margin: 5px 0 0 0;
+  width: 100%;
+  text-align: center;
+  background: #fff;
+  display: table!important;
+  font-size: 14px;
+  line-height: 1.4;
+
+  /* VERY IMPORTANT */
+  content: " ";
+  clear: both;
+  display: table;
+}
+
+.nav-col {
+  display: table-cell!important;
+  float: none;
+  padding: 0;
+  text-align: center;
+  margin: 5px 0 0 0;
+  background: #fff;
+  width: 100%;
+}
+
+/*
+  CSS FOR ADD TO CART BUTTON AND INPUT
+*/
+
+.qty-box {
+  padding: 10px;
+}
+
+.qty-field {
+  float: left;
+  margin-top: 6px;
+  width: 50px;
+  margin-left: 20px;
+}
+
+.btn-add-to-cart {
+  min-width: 125px;
+  padding-top: 10px;
+  padding-bottom: 9px;
+  border-color: #B35A00;
+  background-color: #f78c1b;
+  background: linear-gradient(to bottom,#FEB13A,#f78c1b);
+  color: #552F00;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 8px 1em;
+  outline: 0;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid #d9d9d9;
+  font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+    font-stretch: condensed;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    top: -10px;
+    margin-left: 15px;
+  cursor: pointer;
+
+}
+
+.qty-box-plus {
+  display: inline-block;
+    position: relative;
+    right: -1px;
+    box-sizing: border-box;
+    width: 20px;
+    height: 18px;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #666;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    cursor: pointer;
+    top: 8px;
+    float: left;
+}
+
+.qty-box-sub {
+  display: inline-block;
+  position: relative;
+  right: -1px;
+  box-sizing: border-box;
+  width: 20px;
+  height: 18px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #666;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  cursor: pointer;
+  top: 8px;
+  float: left;
+}
+
+/* UL For CART*/
+.secondary {
+  margin: 5px 0 0 0;
+  padding: 5px 0;
+  background: #fff;
+  text-align: center;
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.item-compare-box {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+}
+
+.btn-form-checkbox {
+  display: inline-block;
+  position: relative;
+  padding-left: 22px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  letter-spacing: normal;
+  cursor: pointer;
+  padding: 8px 1em;
+  outline: 0;
+  border-radius: 3px;
+  background: #fff;
+  color: #4d4d4d;
+  font-weight: 700;
+  line-height: 1;
+  font-stretch: condensed;
+  text-align: center;
+  text-decoration: none;
+}
+
+.compare-item {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  opacity: 0;
+  vertical-align: middle;
+  box-sizing: border-box;
+  padding: 0;
+  line-height: 1.36;
+}
+
+.form-checkbox-title {
+  display: block;
+  min-height: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: normal;
+  font-family: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #222;
+}
+
+.item-alert {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  text-align: -webkit-match-parent;
+  list-style: none;
+  font-size: 14px;
+}
+
+.btn-alert {
+  padding-left: 2.3em;
+  padding-right: .8em;
+  border: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #222;
+  text-decoration: none;
+
+  display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 8px 1em;
+    outline: 0;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background: #fff;
+    font-weight: 700;
+    line-height: 1;
+    font-stretch: condensed;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.item-wishlist {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+
+  /*li specific*/
+  padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: normal;
+    font-family: inherit;
+    text-decoration: none;
+}
+
+.wishlist-btn {
+  padding-left: 2.3em;
+  padding-right: .8em;
+  border: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #222;
+  
+  display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 8px 1em;
+    outline: 0;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background: #fff;
+    font-weight: 700;
+    line-height: 1;
+    font-stretch: condensed;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.item-wishlist-num {
+  display: block;
+  position: relative;
+  margin-top: -5px;
+  color: #707070;
+  font-size: 11px;
+
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: normal;
+  font-family: inherit;
+  text-decoration: none;
+  text-align: -webkit-match-parent;
+  list-style: none;
+}
+
+/*BEST SELLERS*/
+.best-sellers {
+  overflow: visible;
+  margin: 0 0 20px;
+  background: #f2f3f6;
+  padding: 4px;
+  border: 1px solid #cacaca;
+  line-height: 1.4;
+}
+
+.header {
+  padding: 4px 0 8px 0;
+  margin: 0 3%;
+  width: 94%;
+  border-bottom: 0;
+  text-align: left;
+  background: transparent;
+  color: #666;
+  font-size: 1.2em;
+  line-height: 1.2;
+  font-weight: 400;
+  display: block;
+}
+
+.sellers-list {
+  list-style: none;
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 1em;
+  margin-inline-start: -30px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  margin-bottom: -14px;
+}
+
+.sellers-list-item0 {
+  position: relative;
+  margin: 0;
+  padding: 10px 3% 0 3%;
+  font-size: 13px;
+  line-height: 1.3em;
+  border-top: 1px solid #ddd;
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.sellers-list-item1 {
+  position: relative;
+  margin: 0;
+  padding: 10px 3% 0 3%;
+  font-size: 13px;
+  line-height: 1.3em;
+  border-top: 1px solid #ddd;
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.sellers-list-item2 {
+  position: relative;
+  margin: 0;
+  padding: 10px 3% 0 3%;
+  font-size: 13px;
+  line-height: 1.3em;
+  border-top: 1px solid #ddd;
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.landing-page-seller-button {
+  position: absolute;
+  right: 10px;
+  left: 10px;
+  display: block;
+  font-size: 13px;
+  line-height: 1.3em;
+  margin-top: 10px;
+}
+
+.btn-for-seller {
+  cursor: pointer;
+  border-color: #B35A00;
+  background-color: #F9A21B;
+  background: linear-gradient(to bottom,#f78c1b,#FEB13A);
+  color: #552F00;
+  padding: 6px .85em;
+  outline: 0;
+  border: 1px solid #d9d9d9;
+  font-size: 12px;
+
+  display: inline-block;
+    position: relative;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-weight: 700;
+    line-height: 1;
+    font-stretch: condensed;
+    text-align: center;
+    vertical-align: middle;
+  float: right;
+}
+
+.item-seller {
+  margin-right: 0;
+  position: relative;
+    margin: 2px 105px 0 0;
+  display: block;
+}
+
+.noLine {
+  color: #222;
+  font-weight: 700;
+  border: 0;
+  color: #222;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-family: inherit;
+}
+
+.seller-list-rating {
+  margin: 0 10px 1em 0;
+  line-height: inherit;
+}
+
+.rating {
+  background-position: 0 -195px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 59px;
+  height: 13px;
+  overflow: hidden;
+  background: url(//c1.neweggimages.com/WebResource/Themes/2005/Nest/spr_base.png);
+}
+
+.rating-views-num {
+  margin-left: 3px;
+  font-size: 11px;
+  vertical-align: bottom;
+  line-height: inherit;
+  text-align: -webkit-match-parent;
+}
+
+.rating-views-percent {
+  margin-left: 3px;
+  font-size: 11px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.price-info {
+  margin: 5px 0 0 0;
+  padding: 0;
+  text-align: left;
+  color: #222;
+  font-weight: 400;
+  font-size: 11px;
+  list-style: none;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: -30px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  display: block;
+}
+
+.price-current-seller {
+  color: #222;
+  display: inline;
+  font-size: 16px;
+  height: auto!important;
+  margin-bottom: 0;
+  text-align: -webkit-match-parent;
+}
+
+.price-ship-seller {
+  display: inline;
+  padding-top: 0;
+  margin-bottom: 0;
+  font-size: 13px;
+  overflow: hidden;
+  color: #222;
+  min-height: 18px;
+  text-align: -webkit-match-parent;
+}
+
+.is-normal {
+  display: block;
+  font-size: 11px;
+  color: #666;
+  text-align: -webkit-match-parent;
+}
+
+.lowest-offer {
+  position: relative;
+  margin: 0;
+  padding: 10px 3% 20px 3%;
+  font-size: 13px;
+  line-height: 1.3em;
+  border-top: 1px solid #DDD;
+  display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.lowest-offer-link {
+  color: #222;
+  font-weight: 700;
+  border: 0;
+  text-decoration: none;
+  padding: 5px;
+}
+
+
+/* 
+  MODALS
+*/
+
+.modal0 {
+  top: -60px;
+  display: none;
+  margin-right: 8px;
+  right: 105%;
+  width: 300px;
+
+  position: absolute;
+  z-index: 500;
+  text-align: left;
+  white-space: normal;
+  background-color: #FFF;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-shadow: 0 3px 10px rgba(0,0,0,.2);
+  background-clip: padding-box;
+}
+
+.modal1 {
+  top: -60px;
+  display: none;
+  margin-right: 8px;
+  right: 105%;
+  width: 300px;
+
+  position: absolute;
+  z-index: 500;
+  text-align: left;
+  white-space: normal;
+  background-color: #FFF;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-shadow: 0 3px 10px rgba(0,0,0,.2);
+  background-clip: padding-box;
+}
+
+.modal2 {
+  top: -60px;
+  display: none;
+  margin-right: 8px;
+  right: 105%;
+  width: 300px;
+
+  position: absolute;
+  z-index: 500;
+  text-align: left;
+  white-space: normal;
+  background-color: #FFF;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-shadow: 0 3px 10px rgba(0,0,0,.2);
+  background-clip: padding-box;
+}
+
+.popover-body {
+  padding: 10px 10px 3px 10px;
+  text-align: left;
+  white-space: normal;
+}
+
+.popover-sold-by {
+  margin: 0 0 3px 0;
+  color: #707070;
+  font-weight: 400;
+}
+
+.popover-ships-from {
+  margin: 10px 0 7px 0;
+  color: #222;
+  white-space: normal;
+  line-height: 1.4;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.shipping-from {
+  color: #707070;
+  font-weight: 400;
+  font-size: 12px;
+  word-break: normal;
+}
+
+.ratings-views-head {
+  margin: 15px 0 0 0;
+  padding-top: 15px;
+  height: auto;
+  border-top: 1px solid #eee;
+  text-align: left;
+  font-size: 16px;
+  white-space: normal;
+}
+
+.rating-views-head-link {
+  font-weight: 400;
+  color: #222222;
+  border: 0;
+  color: #222;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.market-text-view {
+  margin: 10px 0;
+  position: relative;
+}
+
+.market-text-view-title {
+  font-size: 12px;
+  margin-right: 120px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.market-text-view-subtitle {
+  font-size: 12px;
+  margin-right: 150px;
+  text-transform: uppercase;
+  line-height: 1.3em;
+}
+
+.market-text-view-count {
+  font-size: 30px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  overflow: visible;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  vertical-align: top;
+  text-align: right;
+}
+
+.market-text-view-mark {
+  width: 20px;
+  font-weight: 400;
+  display: inline-block;
+  text-align: left;
+  font-size: 18px;
+  vertical-align: super;
+}
+
+.sellers-list-item0:hover + .modal0{
+  display: block;
+  top: 230px;
+  right: 98%;
+}
+
+.sellers-list-item1:hover + .modal1{
+  display: block;
+  top: 380px;
+  right: 98%;
+}
+
+.sellers-list-item2:hover + .modal2{
+  display: block;
+  top: 530px;
+  right: 98%;
+}
+
