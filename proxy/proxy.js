@@ -16,9 +16,9 @@ app.get('*', (req, res) => {
 })
 
 app.get('/:id', (req, res) => {
-  axios.get(`http://localhost:3011/api/items/${req.params.id}`)
+  axios.get(`http://18.191.102.114/api/items/${req.params.id}`)
   .then((data) => {
-    res.send(res.render('../client/dist/index.html'));
+    res.send(data);
   })
   .catch((err) => {
     console.log(err)
