@@ -16,7 +16,8 @@ class BestSellers extends React.Component {
   }
 
   getData() {
-    axios.get(`/api/items/3`)
+    var x = window.location.href.split('/')[3]
+    axios.get(`http://localhost:3011/api/items/${x}`)
     .then((data) => {
       //console.log(data);
       this.setState({

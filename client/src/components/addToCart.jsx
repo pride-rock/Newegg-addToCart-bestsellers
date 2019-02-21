@@ -11,7 +11,8 @@ class AddToCart extends React.Component {
       priceProduct: 0,
       originalPrice: 0,
       savedCash: 0,
-      savedPcnt: 0
+      savedPcnt: 0,
+      wishlists: 0
     };
     this.getData = this.getData.bind(this);
     this.handleQtyClickPlus = this.handleQtyClickPlus.bind(this);
@@ -39,7 +40,8 @@ class AddToCart extends React.Component {
   }
 
   getData() {
-    axios.get(`/api/items/3`)
+    var x = window.location.href.split('/')[3]
+    axios.get(`http://localhost:3011/api/items/${x}`)
     .then((data) => {
       //console.log(data);
       this.setState({
@@ -152,7 +154,7 @@ class AddToCart extends React.Component {
               Add to Wishlist
             </a>
             <span className="item-wishlist-num">
-              Found on <strong> {this.state.onList}
+              Found on <strong> {this.state.wishlists}
               </strong>
                wishlists
             </span>
