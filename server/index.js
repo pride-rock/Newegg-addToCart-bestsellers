@@ -9,11 +9,11 @@ const cors = require('cors')
 app.use(parser.json());
 app.use(cors())
 app.use(express.static(path.join(__dirname + '/../client/dist')));
-/*
+
 app.get('/bundle', (req, res) => {
   res.send(path.join(__dirname + '/../client/dist/bundle.js'));
 });
-*/
+
 app.get('/api/items/:id', (req, res) => {
   //test that api path exists
     //console.log(req.params.id);
