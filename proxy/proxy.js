@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const app = express();
-const port = process.env.PORT || 3001;
+const port = 8080;
 const axios = require('axios');
 const parser = require('body-parser');
 
@@ -26,5 +26,5 @@ app.get('/:id', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`server running at: http://localhost:${port}`);
+  console.log(`Proxy running at: http://localhost:${port}`);
 });
