@@ -36,8 +36,8 @@ app.get('/api/items/:id', (req, res) => {
 });
 
 
-app.listen(8080, () => {
-  console.log('Server listening on port 8080!');
+app.listen(3011, () => {
+  console.log('Server listening on port 3011!');
 });
 
 /*
