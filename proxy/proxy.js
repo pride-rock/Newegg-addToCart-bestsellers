@@ -16,7 +16,7 @@ app.get('*', (req, res) => {
 })
 
 app.get('/:id', (req, res) => {
-  axios.get(`http://ec2-18-218-218-14.us-east-2.compute.amazonaws.com/api/items/${req.params.id}`)
+  axios.get(`http://localhost:3011/api/items/${req.params.id}`)
   .then((data) => {
     res.send(data);
   })
