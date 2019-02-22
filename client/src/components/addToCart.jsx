@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from 'axios';
+import url from '../../../config'
 
 class AddToCart extends React.Component {
   constructor(props) {
