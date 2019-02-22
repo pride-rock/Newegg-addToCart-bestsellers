@@ -47,7 +47,7 @@ class AddToCart extends React.Component {
     .then((data) => {
       //console.log(data);
       console.log('url', url.url)
-      console.log('data',data);
+      console.log('data',data.data);
       this.setState({
         wishlists: data.data[0].onList,
         priceProduct: data.data[0].priceProduct,
