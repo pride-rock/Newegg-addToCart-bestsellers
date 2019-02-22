@@ -41,7 +41,7 @@ class AddToCart extends React.Component {
 
   getData() {
     var x = window.location.href.split('/')[3]
-    axios.get(`http://18.218.218.14/api/items/${x}`)
+    axios.get(`http://ec2-18-218-218-14.us-east-2.compute.amazonaws.com/api/items/${x}`)
     .then((data) => {
       //console.log(data);
       this.setState({
