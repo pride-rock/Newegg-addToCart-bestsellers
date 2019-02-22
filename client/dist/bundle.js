@@ -129,7 +129,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = {\n  url: 'ec2-18-222-255-36.us-east-2.compute.amazonaws.com'\n};//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb25maWcuanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9jb25maWcuanM/YTFiYyJdLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IHtcclxuICB1cmw6ICdlYzItMTgtMjIyLTI1NS0zNi51cy1lYXN0LTIuY29tcHV0ZS5hbWF6b25hd3MuY29tJ1xyXG59Il0sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBREEiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./config.js\n");
+eval("module.exports = {\n  url: 'http://ec2-18-222-255-36.us-east-2.compute.amazonaws.com/'\n};//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb25maWcuanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9jb25maWcuanM/YTFiYyJdLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IHtcclxuICB1cmw6ICdodHRwOi8vZWMyLTE4LTIyMi0yNTUtMzYudXMtZWFzdC0yLmNvbXB1dGUuYW1hem9uYXdzLmNvbS8nXHJcbn0iXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFEQSIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./config.js\n");
 
 /***/ }),
 
