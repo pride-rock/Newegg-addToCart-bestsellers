@@ -7,11 +7,11 @@ For this project, a team of developers each contributed individual components wh
 # Technical Information
 
 ## Dependencies:
-- Node.js with the Express.js framework
-- SQLite3 with the sqlite3 node driver
-- React framework
+- [Node.js](https://github.com/nodejs/node) with the [Express.js](https://github.com/expressjs/express) framework
+- SQLite3 with the [sqlite3 node driver](https://www.npmjs.com/package/sqlite3)
+- [React](https://github.com/facebook/react) framework
 - Testing
-  - Jest
+  - Jest(https://github.com/facebook/jest)
 
 ## Project Overview
 
