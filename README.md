@@ -4,9 +4,9 @@ This repository contains the sourcecode for a single component of a clone of New
 
 For this project, a team of developers each contributed individual components which were combined into a full listing page. To view the complete listing application, check out the related listing page repo.
 
-##Technical Information##
+## Technical Information
 
-#Dependencies:#
+# Dependencies:
 - Node.js with the Express.js framework
 - SQLite3 with the sqlite3 node driver
 - React framework
