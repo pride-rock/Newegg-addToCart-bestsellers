@@ -10,8 +10,10 @@ app.use(parser.json());
 app.use(cors())
 app.use(express.static(path.join(__dirname + '/../client/dist')));
 
-app.get('/bundle', (req, res) => {
-  res.send(path.join(__dirname + '/../client/dist/bundle.js'));
+app.get('*.js', (req, res, next) => {
+  req.url = req.url + '.gz';
+  res.set('Content-Encoding', 'gzip');
+  next();
 });
 
 app.get('/api/items/:id', (req, res) => {
