@@ -203,7 +203,6 @@ div {
   background-color: #f78c1b;
   background: linear-gradient(to bottom,#FEB13A,#f78c1b);
   color: #552F00;
-  width: 100%;
   display: inline-block;
   position: relative;
   margin: 0;
@@ -239,7 +238,7 @@ div {
     line-height: 14px;
     text-align: center;
     cursor: pointer;
-    top: 8px;
+    top: -2px;
     float: left;
 }
 
@@ -257,7 +256,7 @@ div {
   line-height: 14px;
   text-align: center;
   cursor: pointer;
-  top: 8px;
+  top: -2px;
   float: left;
 }
 
