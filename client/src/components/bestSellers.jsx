@@ -10,10 +10,22 @@ class BestSellers extends React.Component {
       productData: []
     };
     this.getData = this.getData.bind(this);
+    this.configureRating = this.configureRating.bind(this);
   }
 
   componentDidMount(){
     this.getData();
+  }
+
+  configureRating(rating) {
+    var ratingAmnt = parseFloat(rating)
+    if (ratingAmnt > 89) {
+      return 'rating-5.png'
+    } else if (ratingAmnt <= 80 && ratingAmnt >= 61) {
+      return 'rating-4.png'
+    } else {
+      return 'rating-3';
+    }
   }
 
   getData() {
@@ -50,7 +62,7 @@ class BestSellers extends React.Component {
                 <a href="#" className="noLine">{items.companyName}</a>
                 <p className="seller-list-rating">
                   <i className="rating">
-                    <img src={`${url.url}/assets/rating-1.png`} alt=""/>
+                    <img src={`${url.url}/assets/${this.configureRating(items.reviewScore)}`} alt=""/>
                   </i>
                   <span>
                     <span className="rating-views-num">
