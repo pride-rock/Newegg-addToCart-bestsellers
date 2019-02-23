@@ -50,7 +50,7 @@ class BestSellers extends React.Component {
                 <a href="#" className="noLine">{items.companyName}</a>
                 <p className="seller-list-rating">
                   <i className="rating">
-                    <img src="localhost:3011/assets/rating-1.png" alt=""/>
+                    <img src={`${url.url}/assets/rating-1.png`} alt=""/>
                   </i>
                   <span>
                     <span className="rating-views-num">
