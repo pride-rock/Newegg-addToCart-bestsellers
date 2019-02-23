@@ -49,13 +49,15 @@ class BestSellers extends React.Component {
               <div className="item-seller">
                 <a href="#" className="noLine">{items.companyName}</a>
                 <p className="seller-list-rating">
-                  <i className="rating"></i>
+                  <i className="rating">
+                    <img src="localhost:3011/assets/rating-1.png" alt=""/>
+                  </i>
                   <span>
                     <span className="rating-views-num">
                       {items.numReviews} reviews
                     </span>
                     <span className="rating-views-percent">
-                      ({items.reviewScore}% Positive)
+                      ({items.reviewScore} % Positive)
                     </span>
                   </span>
                 </p>

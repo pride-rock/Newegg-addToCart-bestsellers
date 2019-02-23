@@ -238,7 +238,7 @@ div {
     line-height: 14px;
     text-align: center;
     cursor: pointer;
-    top: -2px;
+    top: 9px;
     float: left;
 }
 
@@ -256,7 +256,7 @@ div {
   line-height: 14px;
   text-align: center;
   cursor: pointer;
-  top: -2px;
+  top: 9px;
   float: left;
 }
 
@@ -556,7 +556,6 @@ div {
   width: 59px;
   height: 13px;
   overflow: hidden;
-  background: url(//c1.neweggimages.com/WebResource/Themes/2005/Nest/spr_base.png);
 }
 
 .rating-views-num {
