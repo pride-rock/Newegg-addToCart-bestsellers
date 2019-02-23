@@ -1,3 +1,3 @@
 module.exports = {
-  url: 'http://localhost:3011'
+  url: 'http://ec2-3-17-205-65.us-east-2.compute.amazonaws.com/'
 }
