@@ -42,15 +42,12 @@ class AddToCart extends React.Component {
 
   getData() {
     var x = window.location.href.split('/')[3]
-    console.log('url',x, typeof(x));
     if (x === '') {
       x = '1';
     }
     axios.get(`${url.url}/api/items/${x}`)
     .then((data) => {
       //console.log(data);
-      console.log('url', url.url)
-      console.log('data',data);
       this.setState({
         wishlists: data.data[0].onList,
         priceProduct: data.data[0].priceProduct,
