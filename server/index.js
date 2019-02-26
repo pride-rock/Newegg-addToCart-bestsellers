@@ -4,17 +4,20 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('../addToCart.db');
 const parser = require('body-parser');
 const path = require('path');
-const cors = require('cors')
+const cors = require('cors');
+const compression = require('compression');
 
 app.use(parser.json());
-app.use(cors())
-app.use(express.static(path.join(__dirname + '/../client/dist')));
+app.use(cors());
+app.use(compression());
 
 app.get('*.js', (req, res, next) => {
   req.url = req.url + '.gz';
   res.set('Content-Encoding', 'gzip');
   next();
 });
+
+app.use(express.static(path.join(__dirname + '/../client/dist')));
 
 app.get('/api/items/:id', (req, res) => {
   //test that api path exists
