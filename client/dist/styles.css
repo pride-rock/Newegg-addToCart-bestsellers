@@ -14,9 +14,9 @@ div {
 .aside {
   font-size: 14px;
   width: 300px;
-  float: right;
+  float: left;
   position: relative;
-  left: 0px;
+  left: 30%;
   color: #4d4d4d;
   display: block;
   /* ^ display subject to change*/
