@@ -182,21 +182,29 @@ div {
   margin: 5px 0 0 0;
   background: #fff;
   width: 100%;
+  display: flex;
 }
 
 /*
   CSS FOR ADD TO CART BUTTON AND INPUT
 */
 
-.qty-box {
-  padding: 10px;
+.nav-col .qty-box .qty-button {
+  position:relative;
 }
 
-.qty-field {
+.nav-col .qty-box {
+  padding: 10px;
+
+}
+
+.nav-col .qty-box .qty-field {
   float: left;
   margin-top: 6px;
   width: 50px;
   margin-left: 20px;
+  position: relative;
+  margin-top: 8.3px;
 }
 
 .btn-add-to-cart {
