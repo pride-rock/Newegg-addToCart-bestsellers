@@ -68,3 +68,27 @@ app.listen(3011, () => {
   console.log('Server listening on port 3011!');
 });
 
+
+
+
+
+const getUsers =  (request, response) => {
+  pool.query('SELECT * FROM product', (error, results) => {
+  if (error) {
+    throw error
+  }
+  console.log(results)
+  response.send(results)
+})
+
+
+}
+
+// const getUsers = (request, response) => {
+//     pool.query('SELECT * FROM product', (error, results) => {
+//       if (error) {
+//         throw error
+//       }
+//       response.status(200).json(results.rows)
+//     })
+//   }
