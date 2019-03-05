@@ -6,11 +6,10 @@ const { performance } = require('perf_hooks')
 MongoClient.connect('mongodb://127.0.0.1:27017', { useNewUrlParser: true }, (err, client) => {
   if (err) {
     console.log('error', err)
-    client.close();
   } else {
-    console.log('Connected');
     const db = client.db('newegg');
     const product = db.collection('product')
+    console.log('Connected');
     product.drop();
     batchInsert(product)
       .then(() => {
