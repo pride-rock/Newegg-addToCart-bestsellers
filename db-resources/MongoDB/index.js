@@ -46,8 +46,8 @@ const seeder = (batch) => {
 
 //************************ using promise to throw data in batches ********************************//
 const batchInsert = async (db) => {
-  const batch = 100000
-  const totalSize = 1000000;
+  const batch = 100
+  const totalSize = 10000000;
   // console.log(`Data test: ${totalSize / 1000}k size with ${totalSize / batch} iterations`)
   console.log(`Data test: ${totalSize / 1000000}mil size with ${totalSize / batch} iterations`)
 
