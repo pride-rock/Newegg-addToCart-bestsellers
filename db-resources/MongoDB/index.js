@@ -2,6 +2,11 @@
 const { MongoClient } = require('mongodb'), format = require('util').format;
 const { getRandomArbitrary, getRandomWhole, scoreRound, getRandomPcnt, generateRandomCountry, getProductId } = require('./seedHelper')
 const { performance } = require('perf_hooks')
+const express = require('express');
+// const app = express();
+// const path = require('path');
+// const cluster = require('cluster');
+// const numCPUs = require('os').cpus().length;
 
 MongoClient.connect('mongodb://127.0.0.1:27017', { useNewUrlParser: true }, (err, client) => {
   if (err) {
@@ -20,7 +25,39 @@ MongoClient.connect('mongodb://127.0.0.1:27017', { useNewUrlParser: true }, (err
         console.log('database not succeeded')
       })
   }
-});
+})
+
+const batchInsert = async (db) => {
+  const batch = 10000
+  const totalSize = 10000000;
+  // console.log(`Data test: ${totalSize / 1000}k size with ${totalSize / batch} iterations`)
+  console.log(`MongoDB test: ${totalSize / 1000000}mil size with ${totalSize / batch} iterations`)
+
+  const start = performance.now();
+
+  for (let i = 0; i < totalSize; i += batch) {
+    await db
+      .insertMany(seeder(batch))
+      .then(data => { })
+      .catch(err => { console.log('error', err) })
+  }
+  const end = performance.now();
+  console.log(`Performance: ${end - start} ms`)
+
+
+  const arr = [1, 2, 3, 4, 5, 6, 9, 7, 8, 9, 10];
+  arr.reverse();
+  const used = process.memoryUsage();
+  for (let key in used) {
+    console.log(`${key} ${Math.round(used[key] / 1024 / 1024 * 100) / 100} MB`);
+  }
+}
+
+
+
+
+
+
 
 
 
@@ -44,31 +81,6 @@ const seeder = (batch) => {
 }
 
 //************************ using promise to throw data in batches ********************************//
-const batchInsert = async (db) => {
-  const batch = 100
-  const totalSize = 10000000;
-  // console.log(`Data test: ${totalSize / 1000}k size with ${totalSize / batch} iterations`)
-  console.log(`Data test: ${totalSize / 1000000}mil size with ${totalSize / batch} iterations`)
-
-  const start = performance.now();
-
-  for (let i = 0; i < totalSize; i += batch) {
-    await db
-      .insertMany(seeder(batch))
-      .then(data => { })
-      .catch(err => { console.log('error', err) })
-  }
-  const end = performance.now();
-  console.log(`Performance: ${end - start} ms`)
-
-
-  const arr = [1, 2, 3, 4, 5, 6, 9, 7, 8, 9, 10];
-  arr.reverse();
-  const used = process.memoryUsage();
-  for (let key in used) {
-    console.log(`${key} ${Math.round(used[key] / 1024 / 1024 * 100) / 100} MB`);
-  }
-}
 
 
 //Connecting to MongoDB with Mongoose ORM
