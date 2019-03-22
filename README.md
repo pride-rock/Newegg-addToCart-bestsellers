@@ -30,7 +30,7 @@ Add To Cart section with react state implemented in the quantity section
 # Best Sellers
 Best Sellers section with modal popups done in raw HTML and CSS. Eggs also used dynamic CSS styling to render depending on competitor score
 
-![Alt Text](https://giphy.com/gifs/uWnpISgrnIiXaaaHeP.gif)
+![Alt Text](https://media.giphy.com/media/uWnpISgrnIiXaaaHeP/giphy.gif)
 
 ## Special Thanks
 [Marc](https://github.com/omenwolf)
