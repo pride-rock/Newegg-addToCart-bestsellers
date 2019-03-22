@@ -25,7 +25,7 @@ Optimization was accounted for by using gzip compression on bundle assets while 
 
 Add To Cart section with react state implemented in the quantity section
 
-![Alt Text](https://giphy.com/gifs/24mNfFOwV4HMPPEFRH.gif)
+![Alt Text](https://media.giphy.com/media/1mhN4kBJvNhQmjsVLI/giphy.gif)
 
 # Best Sellers
 Best Sellers section with modal popups done in raw HTML and CSS. Eggs also used dynamic CSS styling to render depending on competitor score
@@ -34,4 +34,5 @@ Best Sellers section with modal popups done in raw HTML and CSS. Eggs also used 
 
 ## Special Thanks
 [Marc](https://github.com/omenwolf)
+
 [Danny](https://github.com/dmaziad)
