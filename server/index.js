@@ -1,55 +1,129 @@
 const express = require('express');
 const app = express();
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('../addToCart.db');
+// const sqlite3 = require('sqlite3').verbose();
+const db = require('../db-resources/index')
 const parser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
-const compression = require('compression');
-
-app.use(parser.json());
+// const compression = require('compression');
+const cluster = require('cluster');
+const http = require('http');
+const numCPUs = require('os').cpus().length;
 app.use(cors());
-app.use(compression());
+app.use(parser.json());
+// app.use(compression());
+app.use(
+  parser.urlencoded({
+    extended: true,
+  })  
+)
 
-app.get('*.js', (req, res, next) => {
-  req.url = req.url + '.gz';
-  res.set('Content-Encoding', 'gzip');
-  next();
-});
+if (cluster.isMaster) {
+  console.log(`Master ${process.pid} is running`);
 
-app.use(express.static(path.join(__dirname + '/../client/dist')));
+  // Fork workers.
+  for (let i = 0; i < numCPUs; i++) {
+    cluster.fork();
+  }
 
-app.get('/api/items/:id', (req, res) => {
-  //test that api path exists
-    //console.log(req.params.id);
-    db.all(`
-    select * from competitors
-    cross join product
-    on competitors.productID = product.productID
-    where product.productID=${req.params.id}
-    `, (err, data) => {
-      if (err) {
-        //test to see if there's an error
-        console.log(err, ' error here');
-      } else {
-        //see if the expected data equals 
-
-        res.send(data);
-        res.end();
-      }
-    });
-});
+  cluster.on('exit', (worker, code, signal) => {
+    console.log(`worker ${worker.process.pid} died`);
+  });
+} else {
+  // Workers can share any TCP connection
+  // In this case it is an HTTP server
+  const express = require('express');
+  const app = express();
+  const port = process.env.PORT || 8080;
+  const { spawn } = require('child_process');
 
 
-app.listen(3011, () => {
-  console.log('Server listening on port 3011!');
-});
+  const pid = process.pid;
+  const server = app.list(port, () => {
+    console.log(`Worker ${process.pid} started`);
+  })
 
-/*
+  app.get('/', (req, res, next) => {
+    for (var i = 0 ; i < 2e6 ; i++){
+      res.send(`Process ${pid} says hi`)
+    }
+  })
 
-  select * from competitors
-  inner join product
-  on competitors.productID = product.productID
-  where product.productID=5
+}
 
-*/
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/dist/index.html'))
+// })
+// app.use(express.static(path.join(__dirname + '/../client/dist')));
+
+// app.get('*.js', (req, res, next) => {
+//   req.url = req.url + '.gz';
+//   res.set('Content-Encoding', 'gzip');
+//   next();
+// });
+
+
+// app.get('/', (request, response) => {
+//   response.send('hello')
+// })
+
+
+
+// app.get('/users', db.getUsers)
+// app.get('/items/:itemId',(req, res) => {
+//   console.log(res)
+//   res.sendFile(path.join(__dirname + '/../client/dist/index.html'));
+// });
+
+
+
+// app.get('/api/items/:id', (req, res) => {
+//   //test that api path exists
+//     //console.log(req.params.id);
+//     db.all(`
+//     select * from competitors \
+//     cross join product \
+//     on competitors.productID = product.productID \
+//     where product.productID=${req.params.id} \
+//     `, (err, data) => {
+//       if (err) {
+//         //test to see if there's an error
+//         console.log(err, ' error here');
+//       } else {
+//         //see if the expected data equals 
+      
+//         res.send(data);
+//         res.end();
+//       }
+//     });
+// });
+
+
+// app.listen(3011, () => {
+//   console.log('Server listening on port 3011!');
+// });
+
+
+
+
+
+// const getUsers =  (request, response) => {
+//   pool.query('SELECT * FROM product', (error, results) => {
+//   if (error) {
+//     throw error
+//   }
+//   console.log(results)
+//   response.send(results)
+// })
+
+
+// }
+
+// const getUsers = (request, response) => {
+//     pool.query('SELECT * FROM product', (error, results) => {
+//       if (error) {
+//         throw error
+//       }
+//       response.status(200).json(results.rows)
+//     })
+//   }
