@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from 'axios';
-import url from '../../../config';
+// import url from '../../../config';
 
 class BestSellers extends React.Component {
   constructor(props) {
@@ -14,7 +14,10 @@ class BestSellers extends React.Component {
   }
 
   componentDidMount(){
-    this.getData();
+    // console.log('hello')
+    console.log(window.location.href)
+    const itemId = window.location.href.split("/")[3];
+    this.getData(itemId);
   }
 
   configureRating(rating) {
@@ -28,14 +31,12 @@ class BestSellers extends React.Component {
     }
   }
 
-  getData() {
-    var x = window.location.href.split('/')[3]
-    if (x === '') {
-      x = '1';
-    }
-    axios.get(`${url.url}/api/items/${x}`)
+  getData(itemId) {
+    axios.get(`/api/items/${itemId}`)
+  
     .then((data) => {
-      //console.log(data);
+      
+      console.log(data.data);
       this.setState({
         productData: data.data
       })
@@ -62,7 +63,7 @@ class BestSellers extends React.Component {
                 <a href="#" className="noLine">{items.companyName}</a>
                 <p className="seller-list-rating">
                   <i className="rating">
-                    <img src={`${url.url}/assets/${this.configureRating(items.reviewScore)}`} alt=""/>
+                    <img src={`/assets/${this.configureRating(items.reviewScore)}`} alt=""/>
                   </i>
                   <span>
                     <span className="rating-views-num">
