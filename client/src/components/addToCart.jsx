@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from 'axios';
-import url from '../../../config'
+// import url from '../../../config'
 
 class AddToCart extends React.Component {
   constructor(props) {
@@ -21,8 +21,10 @@ class AddToCart extends React.Component {
   }
 
   componentDidMount(){
-    this.getData();
-  }
+    // console.log(window.location.href)
+    const itemId = window.location.href.split("/")[3];
+    this.getData(itemId);
+  } 
 
   handleQtyClickPlus() {
     var newQty = this.state.qty += 1
@@ -40,14 +42,18 @@ class AddToCart extends React.Component {
     }
   }
 
-  getData() {
-    var x = window.location.href.split('/')[3]
-    if (x === '') {
-      x = '1';
-    }
-    axios.get(`${url.url}/api/items/${x}`)
+  getData(itemId) {
+    // var x = window.location.href.split('/')[3]
+    // if (x === '') {
+    //   x = '1';
+    // }
+
+    // ${url.url}/api/items/${x}
+
+
+    axios.get(`/api/items/${itemId}`)
     .then((data) => {
-      //console.log(data);
+      // console.log(data);
       this.setState({
         wishlists: data.data[0].onList,
         priceProduct: data.data[0].priceProduct,
@@ -120,6 +126,9 @@ class AddToCart extends React.Component {
               <div className="qty-box">
                 <input type="text" maxLength="3" className="qty-field"
                 value={this.state.qty}/>
+
+                <div className="qty-button">
+
                 <button className="qty-box-plus"
                 onClick={this.handleQtyClickPlus}>
                   <span className="hid-text"><strong>+</strong></span>
@@ -128,6 +137,7 @@ class AddToCart extends React.Component {
                 onClick={this.handleQtyClickSub}>
                   <span className="hid-text"><strong>-</strong></span>
                 </button>
+                </div>
               </div>
               <div className="nav-col">
                 <button className="btn-add-to-cart">
